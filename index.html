@@ -10,5 +10,73 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <form class="container flex flex-column gap-6 align-stretch">
+
+    <div class="flex flex-column gap-5">
+      <h1>Contact Us</h1>
+
+      <div class="flex flex-column align-stretch gap-4">
+
+        <div class="flex justify-between gap-3 gap-4-sm flex-column-sm">
+
+          <label class="flex flex-column align-stretch w-100 gap-1">
+            <p>First Name <span class="txt-green">*</span></p>
+            <input type="text" required>
+            <p class="txt-red">This field is required</p>
+          </label>
+
+          <label class="flex flex-column align-stretch w-100 gap-1">
+            <p>Last Name <span class="txt-green">*</span></p>
+            <input type="text" required>
+            <p class="txt-red">This field is required</p>
+          </label>
+
+        </div>
+        
+        <label class="flex flex-column align-stretch w-100 gap-1">
+          <p>Email <span class="txt-green">*</span></p>
+          <input type="email" required oninvalid="document.getElementById('email-error').style.display = 'block'">
+          <p class="txt-red" id="email-error">Please enter a valid email address</p>
+        </label>
+
+        <fieldset class="fieldset flex flex-column gap-1">
+          <legend>Query Type <span class="txt-green">*</span></legend>
+          <div class="flex justify-between gap-3 flex-column-sm">
+
+            <label class="radio flex gap-2 w-100">
+              <input type="radio" name="query" value="general-enquiry" required>
+              <p class="txt-md">General Enquiry</p>
+            </label>
+
+            <label class="radio flex gap-2 w-100">
+              <input type="radio" name="query" value="support-request">
+              <p class="txt-md">Support Request</p>
+            </label>
+
+          </div>
+          <p class="txt-red">Please select a query type</p>
+        </fieldset>
+        
+        <label class="flex flex-column align-stretch w-100 gap-1">
+          <p>Messsage <span class="txt-green">*</span></p>
+          <textarea class="message" required></textarea>
+          <p class="txt-red">This field is required</p>
+        </label>
+
+      </div>
+    </div>
+
+    <div class="flex flex-column align-start gap-1">
+      <label class="checkbox">
+        <input type="checkbox" required>
+        <img src="assets/images/icon-checkbox-check.svg" alt="">
+        <p>I consent to being contacted by the team <span class="txt-green">*</span></p>
+      </label>
+      <p class="txt-red">To submit this form, please consent to being contacted</p>
+    </div>
+
+    <input type="submit" class="btn" style="text-align: center;" id="btn"/>
+  </form>
+   <script src="script.js"></script>
 </body>
 </html>
